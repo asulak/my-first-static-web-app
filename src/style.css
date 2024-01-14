@@ -142,11 +142,11 @@ body.show-chatbot .chatbot {
   color: #fff;
   cursor: default;  /* Specifies the mouse cursor to be displayed when pointing over an element */
   text-align: center;
-  line-height: 30px;    /* Basically how tall we allow each line of text to be */
+  line-height: 25px;    /* Basically how tall we allow each line of text to be */
   align-self: flex-end;     /* We want incoming messages to be to the right end of the flexbox */
   background:#2c4c34;
   border-radius: 7px;
-  margin: 0 7px 7px 0;
+  margin: 3px 10px 10px 3px;
 }
 
 /* Pertains to the positioning of our outgoing messages  */
