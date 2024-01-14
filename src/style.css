@@ -67,7 +67,7 @@ body.show-chatbot .open-chatbot span:last-child {
   position: fixed;  /* Positioned relative to the viewport, or the browser window itself. Remember position:absolute is positioned relative to the nearest positioned ancestor */
   right: 75px;   /* Margin from right edge of screen */
   bottom: 110px;
-  width: 350px;
+  width: 325px;
   background: #fff; 
   border-radius: 15px;   /* Rounds the corners */
   overflow-y: hidden;   /* Overflowing content at the bottom (after margin) is clipped. This also hides the generic-looking scrollbar, which I replace with my own.  */
@@ -146,7 +146,7 @@ body.show-chatbot .chatbot {
   align-self: flex-end;     /* We want incoming messages to be to the right end of the flexbox */
   background:#2c4c34;
   border-radius: 7px;
-  margin: 0 10px 10px 0;
+  margin: 0 7px 7px 0;
 }
 
 /* Pertains to the positioning of our outgoing messages  */
