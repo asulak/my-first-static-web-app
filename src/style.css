@@ -17,6 +17,10 @@ body {     /* The body outside of the chatbot will have an off-white color*/
   background: #fbfaf5;   
 }
 
+html, body {
+  height: 100%;
+}
+
 /* Bottom right box that, when clicked, opens and closes chatbot */
 .open-chatbot {       
   position: absolute;     /* Lets you place any page element where you want, using the position attributes top, left, bottom, and right to set the location. Relative to the next parent element with relative (or absolute) positioning.*/
