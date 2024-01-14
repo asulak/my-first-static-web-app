@@ -108,6 +108,7 @@ body.show-chatbot .chatbot {
 /* Where takes a selector list as its argument and selects any element that can be selected by one of the selectors.
   ::-webkit-scrollbar is a CSS pseudo-element that affects the style of an element's scrollbar when there is a scrollable overflow  */
 .chatbot :where(.chat-message-storage)::-webkit-scrollbar {
+  display: none;
   width: 18px;
 }
 
@@ -247,7 +248,7 @@ body.show-chatbot .chatbot {
   }
   .chatbot .text-box {
     padding: 5px 15px;
-    resize: none;
+    resize: vertical;
     overflow: hidden;
     position: absolute;
   }
