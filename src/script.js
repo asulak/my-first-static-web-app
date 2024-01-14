@@ -8,6 +8,7 @@ const closeChatbot = document.querySelector(".close-btn");  // When the chat is 
 const chatMessageStorage = document.querySelector(".chat-message-storage"); /* This is what holds our chat messages */
 const textBox = document.querySelector(".text-box textarea");  /* The text area is housed in the text box */
 const sendButton = document.querySelector(".text-box span");   /* This is the green arrow that appears when you start typing in the text box */
+// Don't care about exposing the API key for now. The most I can lose is a remaining $4.96 from a free credit. Will secure after getting on a paid plan. 
 const API_KEY = "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"; // Paste your API key here
 const textBoxHeight = textBox.scrollHeight;   // scrollHeight is the minimum height the element requires in order to fit all content in the viewport without using a vertical scrollbar 
 
