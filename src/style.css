@@ -101,7 +101,7 @@ body.show-chatbot .chatbot {
 /* The container that holds our text message. */ 
 .chatbot .chat-message-storage {   
   overflow-y: auto;  /* Adds a scrollbar to the y-axis when its content overflows the bounds of that element */
-  height: 450px;   
+  height: 400px;   
   padding: 25px 30px 100px 30px;  /* Top, right, bottom, left margins */
 }
 
@@ -237,12 +237,12 @@ body.show-chatbot .chatbot {
   .chatbot {
     right: 0;
     bottom: 0;
-    height: 90%;
+    height: 80%;
     border-radius: 0;
     width: 100%;
   }
   .chatbot .chat-message-storage {
-    height: 80%;
+    height: 60%;
     padding: 25px 15px 100px;
   }
   .chatbot .text-box {
