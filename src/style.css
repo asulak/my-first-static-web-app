@@ -251,7 +251,10 @@ body.show-chatbot .chatbot {
     position: absolute;
   }
   .chatbot header span {
-    width: 100px; 
-    display: block;
+    margin-top: 1px;
+    margin-right: 2px;
+    top: 0;
+    right: 0;
+    position: absolute;
   }
 }
