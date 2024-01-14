@@ -67,7 +67,7 @@ body.show-chatbot .open-chatbot span:last-child {
   position: fixed;  /* Positioned relative to the viewport, or the browser window itself. Remember position:absolute is positioned relative to the nearest positioned ancestor */
   right: 75px;   /* Margin from right edge of screen */
   bottom: 110px;
-  width: 450px;
+  width: 375px;
   background: #fff; 
   border-radius: 15px;   /* Rounds the corners */
   overflow-y: hidden;   /* Overflowing content at the bottom (after margin) is clipped. This also hides the generic-looking scrollbar, which I replace with my own.  */
@@ -162,7 +162,7 @@ body.show-chatbot .chatbot {
   border-radius: 25px;    /* All corners */
   max-width: 75%;          /* Of chat-message-storage container */
   color: #fff;   /* Text color of message we send */
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   background: #2c4c34;
 }
 
