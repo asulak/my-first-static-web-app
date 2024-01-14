@@ -102,7 +102,7 @@ body.show-chatbot .chatbot {
 .chatbot .chat-message-storage {   
   overflow-y: auto;  /* Adds a scrollbar to the y-axis when its content overflows the bounds of that element */
   height: 400px;   
-  padding: 25px 15px 100px 15px;  /* Top, right, bottom, left margins */
+  padding: 10px 15px 90px 10px;  /* Top, right, bottom, left margins */
 }
 
 /* Where takes a selector list as its argument and selects any element that can be selected by one of the selectors.
@@ -138,7 +138,7 @@ body.show-chatbot .chatbot {
 /* The green box to the left of the chatbot's message that holds the voice-chat icon */
 .chat-message-storage .incoming span {  
   width: 36px;  
-  height: 25px;
+  height: 35px;
   color: #fff;
   cursor: default;  /* Specifies the mouse cursor to be displayed when pointing over an element */
   text-align: center;
@@ -146,7 +146,7 @@ body.show-chatbot .chatbot {
   align-self: flex-end;     /* We want incoming messages to be to the right end of the flexbox */
   background:#2c4c34;
   border-radius: 7px;
-  margin: 5px 10px 10px 5px;
+  margin: 0px 10px 10px 0px;
 }
 
 
