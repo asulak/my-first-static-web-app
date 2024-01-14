@@ -252,6 +252,6 @@ body.show-chatbot .chatbot {
   }
   .chatbot header span {
     width: 100px; 
-    align-items: right;
+    display: block;
   }
 }
