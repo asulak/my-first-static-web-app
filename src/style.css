@@ -181,6 +181,7 @@ body.show-chatbot .chatbot {
 .chat-message-storage .incoming p {
   color: #000;    /* Incoming chatbot text */
   background: #f2f2f2;
+  white-space: pre-wrap;
 }
 
 /* Styling for the container that holds our text area */
@@ -204,14 +205,14 @@ body.show-chatbot .chatbot {
 
 /* Styling for the text area itself*/
 .text-box textarea {  
-  height: 100px;   /* Chose a slightly taller than normal default height compared to typical bots */
+  height: 85px;   /* Chose a slightly taller than normal default height compared to typical bots */
   width: 100%;      /* Before padding */
   border: 0px;   /* We don't want a border showing around the text area */
   outline: none;  /* Removes a rather unsightly box that would appear around the text area*/
   resize: none;    
   max-height: 180px; /* I've given the text box an unusual ability to expand vertically */
   padding: 10px 15px 10px;  /* If padding has 3 values, the first padding applies to the top, the second to the right and left, and the third to the bottom  */
-  font-size: 1.10rem;      /* Size of user font. For most browsers, 1 rem = 16 px font */
+  font-size: 0.95rem;      /* Size of user font. For most browsers, 1 rem = 16 px font */
 }
 /* Styling for the send button that appears when text is inside the text box */
 .text-box span {
