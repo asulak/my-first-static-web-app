@@ -146,7 +146,7 @@ body.show-chatbot .chatbot {
   align-self: flex-end;     /* We want incoming messages to be to the right end of the flexbox */
   background:#2c4c34;
   border-radius: 7px;
-  margin: 0 15px 15px 0;
+  margin: 0 10px 10px 0;
 }
 
 /* Pertains to the positioning of our outgoing messages  */
@@ -252,6 +252,6 @@ body.show-chatbot .chatbot {
   }
   .chatbot header span {
     width: 100px;
-    display: none; 
+    display: flex-end; 
   }
 }
