@@ -18,7 +18,7 @@ body {     /* The body outside of the chatbot will have an off-white color*/
 }
 
 html, body {
-  height: 100%;
+  height: 100vh;
 }
 
 /* Bottom right box that, when clicked, opens and closes chatbot */
@@ -68,7 +68,6 @@ body.show-chatbot .open-chatbot span:last-child {
   right: 75px;   /* Margin from right edge of screen */
   bottom: 110px;
   width: 450px;
-  height: 75vh; 
   background: #fff; 
   border-radius: 15px;   /* Rounds the corners */
   overflow-y: hidden;   /* Overflowing content at the bottom (after margin) is clipped. This also hides the generic-looking scrollbar, which I replace with my own.  */
@@ -102,7 +101,7 @@ body.show-chatbot .chatbot {
 /* The container that holds our text message. */ 
 .chatbot .chat-message-storage {   
   overflow-y: auto;  /* Adds a scrollbar to the y-axis when its content overflows the bounds of that element */
-  height: 550px;   
+  height: 50vh;   
   padding: 25px 30px 100px 30px;  /* Top, right, bottom, left margins */
 }
 
@@ -243,7 +242,7 @@ body.show-chatbot .chatbot {
     width: 100%;
   }
   .chatbot .chat-message-storage {
-    height: 90%;
+    height: 80%;
     padding: 25px 15px 100px;
   }
   .chatbot .text-box {
