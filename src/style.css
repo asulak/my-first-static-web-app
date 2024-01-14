@@ -237,7 +237,7 @@ body.show-chatbot .chatbot {
   .chatbot {
     right: 0;
     bottom: 0;
-    height: 95%;
+    height: 100%;
     border-radius: 0;
     width: 100%;
   }
@@ -247,6 +247,8 @@ body.show-chatbot .chatbot {
   }
   .chatbot .text-box {
     padding: 5px 15px;
+    overflow: hidden;
+    position: absolute;
   }
   .chatbot header span {
     display: block; /*Takes up available screen width */
