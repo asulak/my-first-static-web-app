@@ -1,17 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
-</head>
-
-<body>
-  <main>
-    <h1>Vanilla JavaScript App</h1>
-  </main>
-</body>
-
-</html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta chargset="utf-8">
+      <title>Property Chatbot</title>
+      <link rel="stylesheet" href="style.css">
+      <!-- The viewport is the user's visible area of a web page. Width=device-width sets the page width to the screen width of the device. Initial-scale-1.0
+    sets the zoom level when the page is first loaded by the browser. -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Google Fonts: Material Symbols and Icons imports-->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+      <!-- The script tag embeds executable code, in this case our JavaScript and the axios package -->
+      <script src="script.js" defer></script>  <!-- Defer tell use the script is downloaded parallel to parsing the page, and executed after the page has finished parsing. -->
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <!-- Bottom right button -->
+      <button class="open-chatbot">
+        <!-- Comment icon -->
+        <!-- Span tag is used to apply styles or manipulate portions of text within a larger block of content.-->
+        <span class="material-symbols-rounded">mode_comment</span>
+        <!-- "X" to close chatbot-->
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <div class="chatbot">
+        <!-- The header tag represents a container for introductory content. -->
+        <header>
+            <!-- The div tag defines a division or section in an HTML document-->
+            <div class="image-container">
+          <img src="./DrakesPondLogo.png" width="325" height="100" />
+            </div>
+            <!-- This allows the chatbot to close-->
+          <span class="close-btn material-symbols-outlined">close</span>
+        </header>
+        <!-- Defines an unordered, bulleted list -->
+        <ul class="chat-message-storage">
+            <!--The li element is an item in a list contained within a parent element, in this case an unordered list <ul> 
+                The li element contains a unique class, but that class is contained within the ul element.-->
+          <li class="chat incoming">
+            <!-- Voice chat is symbol inside the square next to the chatbot's message -->
+            <span class="material-symbols-outlined">voice_chat</span>
+            <p>Hi, I'm Drake. I'm AI at Drakes Pond. <br>How can I help you today?</p>
+          </li>
+        </ul>
+        <!-- Exit the unordered list element and class for the chat-message-storage and create a new div for chat input -->
+        <div class="text-box">
+            <!-- Text area includes a placeholder that shows default text. The required attribute
+                tells us a user must fill in a value before submitting the text. -->
+          <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+          <!-- Span id assigns a unique identifier called send-btn to the send button symbol-->
+          <span id="send-btn" class="material-symbols-rounded">send</span>
+        </div>
+      </div>
+    </body>
+  </html>

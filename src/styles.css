@@ -1,21 +1,250 @@
-* {
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* CSS Selector Priority (Lowest to Highest)
+Element -> Class -> ID -> Inline 
 
-html, body {
+/* Import custom Google font*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap');
+
+/* Default styling for all css selectors unless overriden by class, id, or inline formats */
+* {      
   margin: 0;
-  border: 0;
   padding: 0;
-  background-color: #fff;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
-main {
-  margin: auto;
-  width: 50%;
-  padding: 20px;
+/* Body tag formatting */
+body {     /* The body outside of the chatbot will have an off-white color*/
+  background: #fbfaf5;   
 }
 
-main > h1 {
+/* Bottom right box that, when clicked, opens and closes chatbot */
+.open-chatbot {       
+  position: absolute;     /* Lets you place any page element where you want, using the position attributes top, left, bottom, and right to set the location. Relative to the next parent element with relative (or absolute) positioning.*/
+  bottom: 30px;    /* 1 px is 1/96 of an inch. Bottom represents the margin from the bottom. */
+  right: 45px;     /* Margin from the right vertical edge */
+  outline: none;   /* Drawn outide an element's border and may overlap other content */
+  border: none;   /* An outline is part of the CSS box model and takes up layout space, but outline does not */
+  height: 75px;   /* Height of the bottom right box */
+  width: 75px;     /* Width of bottom right box */
+  display: flex;   /* Allows you to create flexible layouts with elements that you can align and distribute vertically or horizontally. */
+  cursor: pointer;   /* Sets the mouse cursor, if any, to show when the mouse pointer is over an element */
+  align-items: center;  /* Aligns flexible container's items along the center of the cross axis, vertical by default */
+  justify-content: center;  /* Aligns flexible container's items along main (horizontal) axis */
+  border-radius: .8em;  /* Radii of outer border edge.  */
+  background: #2c4c34;    /*  Envision this being conditional based on the property*/
+  transition: all 0.2s ease;  /* Time between states of opening and closing */
+}
+
+/* CSS selector for body and nested element class */
+body.show-chatbot .open-chatbot {
+  transform: rotate(90deg);   /* Bottom right box rotates 90 degrees when clicked */
+}
+
+/* Formatting applies to the span tag within the open-chatbot class */
+.open-chatbot span {
+  color: #fff;       
+  position: absolute;
+}
+
+/* The first-child pseudo-class represents the first element among a group of sibiling elements. last-child is the opposite. */
+/* We can apply formating to multiple CSS selectors by including a commma */
+
+/* Don't show the white message box icon on the botom right button when chatbot is open */
+.open-chatbot span:last-child,
+body.show-chatbot .open-chatbot span:first-child  {
+  opacity: 0;}   
+
+/* Shows the "X" when the chatbot is open */
+body.show-chatbot .open-chatbot span:last-child {
+  opacity: 1; }   /* 1 is transparent */
+
+
+.chatbot {
+  position: fixed;  /* Positioned relative to the viewport, or the browser window itself. Remember position:absolute is positioned relative to the nearest positioned ancestor */
+  right: 75px;   /* Margin from right edge of screen */
+  bottom: 110px;
+  width: 450px;
+  background: #fff; 
+  border-radius: 15px;   /* Rounds the corners */
+  overflow-y: hidden;   /* Overflowing content at the bottom (after margin) is clipped. This also hides the generic-looking scrollbar, which I replace with my own.  */
+  opacity: 0;   /* 1 is opaque, 0 is transparent */
+  pointer-events: none;  /* Doesn't react to being clicked */
+  box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),    /* Softens the transition from the underlying webpage to the chatbox */
+              0 32px 64px -48px rgba(0,0,0,0.5); 
+  transition: all 0.1s ease;    /* Allows us to define the transition between two states of an element (ex: open/close) */
+}
+/* Important - this is what makes the chatbot open */
+body.show-chatbot .chatbot {
+  opacity: 1;
+  pointer-events: auto;  /* Allows default browser behavior */
+}
+
+/* What holds our property logo */
+.chatbot header {    
+  padding: 10px;  /* Only 1 (of 4 possible) padding values means even padding from borders all directions */
+  position: relative;  /* In relation to environment (user viewport), i.e. not nailed in a fixed spot on the screen */
+  background: #2c4c34;
+}
+
+/* The span tag serves as a subelement of the .chatbot header element */
+.chatbot header span {     
+  position: absolute;  /* Relative to chatbot */
+  right: 50%;    /* Because the left margin is omitted, it is the same as the right margin */
+  top: 50%;      /* Similar logic to the right margin comment */
+  display: none;    /* We use this to hide the span element */
+}
+
+/* The container that holds our text message. */ 
+.chatbot .chat-message-storage {   
+  overflow-y: auto;  /* Adds a scrollbar to the y-axis when its content overflows the bounds of that element */
+  height: 550px;   
+  padding: 25px 30px 100px 30px;  /* Top, right, bottom, left margins */
+}
+
+/* Where takes a selector list as its argument and selects any element that can be selected by one of the selectors.
+  ::-webkit-scrollbar is a CSS pseudo-element that affects the style of an element's scrollbar when there is a scrollable overflow  */
+.chatbot :where(.chat-message-storage, textarea)::-webkit-scrollbar {
+  width: 18px;
+}
+
+/* The scrollbar's track */
+ .chatbot :where(.chat-message-storage, textarea)::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 55px;
+} 
+
+/* The scrollbar's thumb (the gray shaded part that rests on the track) */
+.chatbot :where(.chat-message-storage, textarea)::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 25px;
+}
+
+/* Hover effect over the scrollbar thumb */
+.chatbot :where(.chat-message-storage, textarea)::-webkit-scrollbar-thumb:hover {
+    background-color:#a0a0a5;
+    border:4px solid #f4f4f4
+}
+
+/* General chat-message-storage box settings */
+.chat-message-storage .chat {
+  display: flex;   /* Defines a flex container, which serves as a parent element for flex items. The main idea behind a flex layout is to give the container the ability to alter its items width, height, and order to best fill the available space. */ 
+  list-style: none;  /* We have the option of setting list-related properties but will decline */
+}
+
+/* The green box to the left of the chatbot's message that holds the voice-chat icon */
+.chat-message-storage .incoming span {  
+  width: 36px;  
+  height: 30px;
+  color: #fff;
+  cursor: default;  /* Specifies the mouse cursor to be displayed when pointing over an element */
   text-align: center;
-  font-size: 3.5em;
+  line-height: 30px;    /* Basically how tall we allow each line of text to be */
+  align-self: flex-end;     /* We want incoming messages to be to the right end of the flexbox */
+  background:#2c4c34;
+  border-radius: 7px;
+  margin: 0 15px 15px 0;
+}
+
+/* Pertains to the positioning of our outgoing messages  */
+.chat-message-storage .outgoing {
+    margin: 20px 10px;  /* Top-bottom and left-right */
+    justify-content: flex-end;  /* Aligns flex items at end of container */
+  }
+
+/* Styling inside our outgoing messages */
+.chat-message-storage .chat p {
+  white-space: pre-wrap;  /* Text wraps on to new line */
+  padding: 12px 16px;   /* Top-bottom and left-right */
+  border-radius: 25px;    /* All corners */
+  max-width: 75%;          /* Of chat-message-storage container */
+  color: #fff;   /* Text color of message we send */
+  font-size: 0.95rem;
+  background: #2c4c34;
+}
+
+/* Styling for incoming messages from chatgpt */
+.chat-message-storage .incoming p {
+  border-radius: 10px 10px 10px 0;  /* Rounds the corners of an element's border edge. The 4 values for each radius in top-left, top-right, bottom-right, and bottom-left. Bottom-left, which is 0, means there is no curvature.*/
+}
+
+/* Error message if we don't get a response from chatgpt */
+.chat-message-storage .chat p.error {   
+  color: #721c24;
+  background: #f8d7da;
+}
+
+/* Styling for incoming message from chatgpt */
+.chat-message-storage .incoming p {
+  color: #000;    /* Incoming chatbot text */
+  background: #f2f2f2;
+}
+
+/* Styling for the container that holds our text area */
+.chatbot .text-box {
+  display: flex;
+  position: absolute;  /* Absolute positioning moves an element relative to its nearest positioned (i.e., the nearest parent element). 
+                        Meanwhile, relative positioning means positioning an element relative to its default position on the page */ 
+  bottom: 0;   /* Specifies how far the absolutely positioned box's bottom margin edge is offset above the edge of the box's containing block */
+  width: 100%;
+  background: #fff;
+  padding: 10px 20px;  /* Top-bottom left-right padding around message box to border */
+  border-top: 2px solid #ddd;   /* Top border from chat message box to text box */
+}
+
+/* For property logo */
+.image-container {    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+/* Styling for the text area itself*/
+.text-box textarea {  
+  height: 100px;   /* Chose a slightly taller than normal default height compared to typical bots */
+  width: 100%;      /* Before padding */
+  border: 0px;   /* We don't want a border showing around the text area */
+  outline: none;  /* Removes a rather unsightly box that would appear around the text area*/
+  resize: none;    
+  max-height: 180px; /* I've given the text box an unusual ability to expand vertically */
+  padding: 10px 15px 10px;  /* If padding has 3 values, the first padding applies to the top, the second to the right and left, and the third to the bottom  */
+  font-size: 1.10rem;      /* Size of user font. For most browsers, 1 rem = 16 px font */
+}
+/* Styling for the send button that appears when text is inside the text box */
+.text-box span {
+  align-self: flex-end;  /* Want the send button in the same div as the text box but to the right of it */
+  color: #2c4c34;    
+  height: 100px;     /* Height of box that holds send button is the same as the box that holds the text area */
+  display: flex;
+  align-items: center;   /* Vertically centered within the text box's default height */
+  visibility: hidden;  /* Box that encapsulates the send button is hidden */
+}
+
+/* Send button is visible when typing or if there is text in text-box */
+.text-box textarea:valid ~ span {
+  visibility: visible;
+} 
+/* Applies different styles for different media types/devices to support responsive web design */
+
+@media (max-width: 490px) {
+  .open-chatbot {
+    right: 20px;
+    bottom: 20px;
+  }
+  .chatbot {
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    border-radius: 0;
+    width: 100%;
+  }
+  .chatbot .chat-message-storage {
+    height: 90%;
+    padding: 25px 15px 100px;
+  }
+  .chatbot .text-box {
+    padding: 5px 15px;
+  }
+  .chatbot header span {
+    display: block; /*Takes up available screen width */
+  }
 }
