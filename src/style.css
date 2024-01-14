@@ -68,7 +68,7 @@ body.show-chatbot .open-chatbot span:last-child {
   right: 75px;   /* Margin from right edge of screen */
   bottom: 110px;
   width: 450px;
-  height: 100vh; 
+  height: 75vh; 
   background: #fff; 
   border-radius: 15px;   /* Rounds the corners */
   overflow-y: hidden;   /* Overflowing content at the bottom (after margin) is clipped. This also hides the generic-looking scrollbar, which I replace with my own.  */
