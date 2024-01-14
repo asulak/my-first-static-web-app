@@ -251,6 +251,7 @@ body.show-chatbot .chatbot {
     position: absolute;
   }
   .chatbot header span {
-    display: block; /*Takes up available screen width */
+    width: 100px;
+    display: none; 
   }
 }
