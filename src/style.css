@@ -138,11 +138,11 @@ body.show-chatbot .chatbot {
 /* The green box to the left of the chatbot's message that holds the voice-chat icon */
 .chat-message-storage .incoming span {  
   width: 36px;  
-  height: 30px;
+  height: 25px;
   color: #fff;
   cursor: default;  /* Specifies the mouse cursor to be displayed when pointing over an element */
   text-align: center;
-  line-height: 30px;    /* Basically how tall we allow each line of text to be */
+  line-height: 25px;    /* Basically how tall we allow each line of text to be */
   align-self: flex-end;     /* We want incoming messages to be to the right end of the flexbox */
   background:#2c4c34;
   border-radius: 7px;
