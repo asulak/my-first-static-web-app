@@ -102,8 +102,8 @@ body.show-chatbot .chatbot {
 .chatbot .chat-message-storage {   
   overflow-y: auto;  /* Adds a scrollbar to the y-axis when its content overflows the bounds of that element */
   height: 400px;   
-  padding: 15px 15px 83px 10px;  /* Top, right, bottom, left margins */
-  font-size: 0.75rem;
+  padding: 15px 15px 90px 10px;  /* Top, right, bottom, left margins */
+  font-size: 0.85rem;
 }
 
 /* Where takes a selector list as its argument and selects any element that can be selected by one of the selectors.
@@ -163,7 +163,7 @@ body.show-chatbot .chatbot {
   border-radius: 25px;    /* All corners */
   max-width: 75%;          /* Of chat-message-storage container */
   color: #fff;   /* Text color of message we send */
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   background: #2c4c34;
 }
 
@@ -212,13 +212,13 @@ body.show-chatbot .chatbot {
   resize: none;    
   max-height: 180px; /* I've given the text box an unusual ability to expand vertically */
   padding: 10px 15px 10px;  /* If padding has 3 values, the first padding applies to the top, the second to the right and left, and the third to the bottom  */
-  font-size: 0.95rem;      /* Size of user font. For most browsers, 1 rem = 16 px font */
+  font-size: 0.85rem;      /* Size of user font. For most browsers, 1 rem = 16 px font */
 }
 /* Styling for the send button that appears when text is inside the text box */
 .text-box span {
   align-self: flex-end;  /* Want the send button in the same div as the text box but to the right of it */
   color: #2c4c34;    
-  height: 100px;     /* Height of box that holds send button is the same as the box that holds the text area */
+  height: 80px;     /* Height of box that holds send button is the same as the box that holds the text area */
   display: flex;
   align-items: center;   /* Vertically centered within the text box's default height */
   visibility: hidden;  /* Box that encapsulates the send button is hidden */
