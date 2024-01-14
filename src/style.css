@@ -251,7 +251,7 @@ body.show-chatbot .chatbot {
     position: absolute;
   }
   .chatbot header span {
-    width: 100px;
-    display: flex-end; 
+    width: 100px; 
+    align-items: right;
   }
 }
