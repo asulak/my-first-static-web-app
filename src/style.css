@@ -247,6 +247,7 @@ body.show-chatbot .chatbot {
   }
   .chatbot .text-box {
     padding: 5px 15px;
+    resize: none;
     overflow: hidden;
     position: absolute;
   }
