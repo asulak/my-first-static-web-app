@@ -102,7 +102,8 @@ body.show-chatbot .chatbot {
 .chatbot .chat-message-storage {   
   overflow-y: auto;  /* Adds a scrollbar to the y-axis when its content overflows the bounds of that element */
   height: 400px;   
-  padding: 10px 15px 90px 10px;  /* Top, right, bottom, left margins */
+  padding: 15px 15px 83px 10px;  /* Top, right, bottom, left margins */
+  font-size: 0.75rem;
 }
 
 /* Where takes a selector list as its argument and selects any element that can be selected by one of the selectors.
@@ -204,7 +205,7 @@ body.show-chatbot .chatbot {
 
 /* Styling for the text area itself*/
 .text-box textarea {  
-  height: 80px;   /* Chose a slightly taller than normal default height compared to typical bots */
+  height: 75px;   /* Chose a slightly taller than normal default height compared to typical bots */
   width: 100%;      /* Before padding */
   border: 0px;   /* We don't want a border showing around the text area */
   outline: none;  /* Removes a rather unsightly box that would appear around the text area*/
