@@ -255,6 +255,7 @@ body.show-chatbot .chatbot {
     margin-right: 2px;
     top: 0;
     right: 0;
+    display: block;
     position: absolute;
   }
 }
