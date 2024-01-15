@@ -10,7 +10,6 @@ Element -> Class -> ID -> Inline
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
-  zoom: 95%;
 }
 
 /* Body tag formatting */
@@ -20,7 +19,7 @@ body {     /* The body outside of the chatbot will have an off-white color*/
 
 html, body {
   height: 100vh;
-  zoom: 97%;
+  zoom: 92%;
 }
 
 /* Bottom right box that, when clicked, opens and closes chatbot */
