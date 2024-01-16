@@ -33,7 +33,7 @@ let typedMessage = null; // Variable to store user's message. The default value 
 // const API_KEY = await client.getSecret("OpenAIKey");
 
 
-API_KEY = "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"
+const API_KEY = "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"
 
 // EVENT LISTENERS
 
