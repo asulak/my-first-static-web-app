@@ -15,22 +15,25 @@ const textBoxHeight = textBox.scrollHeight;   // scrollHeight is the minimum hei
 
 let typedMessage = null; // Variable to store user's message. The default value is null. 
 
-// AZURE SECRET
+// // AZURE SECRET
 
-// Include required dependencies
-import DefaultAzureCredential from "./node_modules/@azure/identity";
-import SecretClient from "./node_modules/@azure/keyvault-secrets";
+// // Include required dependencies
+// import DefaultAzureCredential from "./node_modules/@azure/identity";
+// import SecretClient from "./node_modules/@azure/keyvault-secrets";
 
-// Authenticate to Azure
-const credential = new DefaultAzureCredential(); 
+// // Authenticate to Azure
+// const credential = new DefaultAzureCredential(); 
 
-// Create SecretClient
-const vaultName = '<ChatbotTest>';  
-const url = `https://${vaultName}.vault.azure.net`;  
-const client = new SecretClient(url, credential);  
+// // Create SecretClient
+// const vaultName = '<ChatbotTest>';  
+// const url = `https://${vaultName}.vault.azure.net`;  
+// const client = new SecretClient(url, credential);  
 
-// Get secret
-const API_KEY = await client.getSecret("OpenAIKey");
+// // Get secret
+// const API_KEY = await client.getSecret("OpenAIKey");
+
+
+API_KEY = "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"
 
 // EVENT LISTENERS
 
