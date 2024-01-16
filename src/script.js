@@ -19,7 +19,7 @@ let typedMessage = null; // Variable to store user's message. The default value 
 
 // Include required dependencies
 import { SecretClient } from 'https://cdn.jsdelivr.net/npm/@azure/keyvault-secrets@4.7.0/dist/index.min.js';  
-import { InteractiveBrowserCredential } from '.node_modules\@azure\identity';
+import { InteractiveBrowserCredential } from '.\@azure\identity';
 
 // Authenticate to Azure
 varcredential = new InteractiveBrowserCredential(); 
