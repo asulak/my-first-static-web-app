@@ -18,8 +18,8 @@ let typedMessage = null; // Variable to store user's message. The default value 
 // AZURE SECRET
 
 // Include required dependencies
-import { DefaultAzureCredential } from '../@azure/identity';  
-import { SecretClient } from '../@azure/keyvault-secrets';  
+import { DefaultAzureCredential } from '.https://cdn.jsdelivr.net/npm/@azure/identity@4.0.0/dist/index.min.js';  
+import { SecretClient } from 'https://cdn.jsdelivr.net/npm/@azure/keyvault-secrets@4.7.0/dist/index.min.js';  
 
 // Authenticate to Azure
 const credential = new DefaultAzureCredential(); 
