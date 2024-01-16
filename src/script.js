@@ -25,7 +25,7 @@ import { SecretClient } from './@azure/keyvault-secrets';
 const credential = new DefaultAzureCredential(); 
 
 // Create SecretClient
-const vaultName = '<ChatbotTest>';  
+const vaultName = 'ChatbotTest';  
 const url = `https://${vaultName}.vault.azure.net`;  
 const client = new SecretClient(url, credential);  
 
