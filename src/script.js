@@ -8,14 +8,29 @@ const closeChatbot = document.querySelector(".close-btn");  // When the chat is 
 const chatMessageStorage = document.querySelector(".chat-message-storage"); /* This is what holds our chat messages */
 const textBox = document.querySelector(".text-box textarea");  /* The text area is housed in the text box */
 const sendButton = document.querySelector(".text-box span");   /* This is the green arrow that appears when you start typing in the text box */
-// Don't care about exposing the API key for now. The most I can lose is a remaining $4.96 from a free credit. Will secure after getting on a paid plan. 
-const API_KEY = "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";
 const textBoxHeight = textBox.scrollHeight;   // scrollHeight is the minimum height the element requires in order to fit all content in the viewport without using a vertical scrollbar 
 
 // let declares a variable that can be reassigned another value
 // Both let and const are block-scoped, meaning they can be accessible within curly braces. Curly braces group blocks of code and execute them together. 
 
 let typedMessage = null; // Variable to store user's message. The default value is null. 
+
+// AZURE SECRET
+
+// Include required dependencies
+import { DefaultAzureCredential } from '@azure/identity';  
+import { SecretClient } from '@azure/keyvault-secrets';  
+
+// Authenticate to Azure
+const credential = new DefaultAzureCredential(); 
+
+// Create SecretClient
+const vaultName = '<ChatbotTest>';  
+const url = `https://${vaultName}.vault.azure.net`;  
+const client = new SecretClient(url, credential);  
+
+// Get secret
+const API_KEY = await client.getSecret("OpenAIKey");
 
 // EVENT LISTENERS
 
