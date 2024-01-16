@@ -19,10 +19,10 @@ let typedMessage = null; // Variable to store user's message. The default value 
 
 // Include required dependencies
 import { SecretClient } from 'https://cdn.jsdelivr.net/npm/@azure/keyvault-secrets@4.7.0/dist/index.min.js';  
-import { InteractiveBrowserCredential } from 'https://cdn.jsdelivr.net/npm/@azure/identity@4.0.0/dist/index.min.js';  
+import { InteractiveBrowserCredential } from '@azure/identity';
 
 // Authenticate to Azure
-const credential = new InteractiveBrowserCredential(); 
+varcredential = new InteractiveBrowserCredential(); 
 
 // Create SecretClient
 const vaultName = '<ChatbotTest>';  
