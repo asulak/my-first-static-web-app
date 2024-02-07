@@ -22,18 +22,15 @@ let typedMessage = null; // Variable to store user's message. The default value 
 // import SecretClient from "./node_modules/@azure/keyvault-secrets";
 
 // // Authenticate to Azure
-// const credential = new DefaultAzureCredential(); 
+const credential = new DefaultAzureCredential(); 
 
 // // Create SecretClient
-// const vaultName = '<ChatbotTest>';  
-// const url = `https://${vaultName}.vault.azure.net`;  
-// const client = new SecretClient(url, credential);  
+const vaultName = '<ChatbotTest>';  
+const url = `https://${vaultName}.vault.azure.net`;  
+const client = new SecretClient(url, credential);  
 
 // // Get secret
-// const API_KEY = await client.getSecret("OpenAIKey");
-
-
-const API_KEY = "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"
+const API_KEY = await client.getSecret("OpenAI");
 
 // EVENT LISTENERS
 
@@ -141,11 +138,12 @@ const generateResponse = (chatElement) => {
                 {role: "user", content: typedMessage}]
         })   /* Terminates the JSON.stringify method */
     }    /* Terminates the nested requestOptions function. */
-
     // Note we haven't yet ended the generateResponse function. 
+
+    // CALL THE PYTHON FUNCTION CONTAINING THE API KEY 
     
     // The fetch method starts the process of fetching a resource from a server. It returns a Promise, an object that represents the eventual completion or failure of
-    // an asychronous operation (lets us start long-running tasks while running others in parallel). A promise resolves to a response object as a value, a thenable, or an error.  
+    // an asychronous operation (lets us start long-running tasks while running others in parallel). A promise resolves to a response object as a value, a thenable, or an error
 
     // First, we send the API_URL and a second optional argument that includes the request want to make to the API. 
     // We get the promise resolved as a thenable, which takes the response object and reads it to completion. It returns a promise which resolves with the result of parsing the body text as JSON.
@@ -176,7 +174,7 @@ const generateResponse = (chatElement) => {
 
     // An asychrnouous nested function (still part of generateResponse) takes both outgoing and incoming chat messages. 
 
-//     const postMessagestoDatabase = async(request_message, response_message) => {
+//     const postMessagestoDatabase = async(request_message, response_message) => {n
 //         try {
 //             // The await keyword can only be used inside an async function. The await keyword makes the function pause the execution and wait for a resolved promise before it continues.  
 //             // With axios.post, the first parameter is the URL, the second parameter is the request body, and the 3rd parameter is the options.

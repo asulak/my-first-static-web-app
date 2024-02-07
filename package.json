@@ -6,7 +6,9 @@
   },
   "dependencies": {
     "@azure/identity": "^4.0.1",
-    "@azure/keyvault-secrets": "^4.7.0"
+    "@azure/keyvault-secrets": "^4.7.0",
+    "install": "^0.13.0",
+    "npm": "^10.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",
