@@ -18,8 +18,8 @@ let typedMessage = null; // Variable to store user's message. The default value 
 // // AZURE SECRET
 
 // // Include required dependencies
-var DefaultAzureCredential = require('azure-identity');
-var SecretClient = require('azure-keyvault-secrets');
+import DefaultAzureCredential from 'azure-identity';
+import SecretClient from 'azure-keyvault-secrets';
 
 //import {DefaultAzureCredential} from "./node_modules/@azure/identity";
 //import {SecretClient} from "./node_modules/@azure/keyvault-secrets";
