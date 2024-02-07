@@ -5,7 +5,12 @@
     "start": "sirv ./src public --cors --single --no-clear --port 8000"
   },
   "dependencies": {
-    "@azure/identity": "^4.0.0",
+    "@azure/identity": "^4.0.1",
     "@azure/keyvault-secrets": "^4.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "babelify": "^10.0.0"
   }
 }

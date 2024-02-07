@@ -13,6 +13,10 @@
       <!-- The script tag embeds executable code, in this case our JavaScript and the axios package -->
       <script type="module" src="script.js" defer></script>  <!-- Defer tell use the script is downloaded parallel to parsing the page, and executed after the page has finished parsing. -->
       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script src="bundle.js"></script>
+      <script>
+          alert(`Azure Identity generated from index.html: ${AzureIdentity('123456')}`);
+      </script>
     </head>
     <body>
         <!-- Bottom right button -->
