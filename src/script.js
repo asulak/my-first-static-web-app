@@ -18,8 +18,11 @@ let typedMessage = null; // Variable to store user's message. The default value 
 // // AZURE SECRET
 
 // // Include required dependencies
-import {DefaultAzureCredential} from './node_modules/@azure/identity';
-import SecretClient from './node_modules/@azure/keyvault-secrets';
+//import {DefaultAzureCredential} from './node_modules/@azure/identity';
+//import {SecretClient} from './node_modules/@azure/keyvault-secrets';
+
+require('@azure/identity');
+require('@azure/keyvault-secrets');
 
 //import {DefaultAzureCredential} from "./node_modules/@azure/identity";
 //import {SecretClient} from "./node_modules/@azure/keyvault-secrets";
@@ -30,7 +33,7 @@ const credential = new DefaultAzureCredential();
 // // Create SecretClient
 const vaultName = '<ChatbotTest>';  
 const url = `https://${vaultName}.vault.azure.net`;  
-const client = new SecretClient(url, credential);  
+const client = azure-keyvault-secrets.SecretClient(url, credential);  
 
 // // Get secret
 const API_KEY = await client.getSecret("OpenAI");
