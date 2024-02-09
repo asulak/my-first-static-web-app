@@ -7,12 +7,18 @@
   "dependencies": {
     "@azure/identity": "^4.0.1",
     "@azure/keyvault-secrets": "^4.7.0",
+    "@azure/msal-node": "^2.6.3",
+    "fs": "^0.0.1-security",
+    "fs-promise": "^2.0.3",
+    "fs.promises": "^0.1.2",
     "install": "^0.13.0",
+    "msal": "^1.4.18",
     "npm": "^10.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
+    "@types/node": "^20.11.17",
     "babelify": "^10.0.0"
   }
 }
